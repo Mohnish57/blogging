@@ -1,0 +1,87 @@
+
+<html>
+    <head>
+        <title>
+            Signup Page</title>
+            {% load static %}
+            <link type="text/css" rel="stylesheet"  href="{% static "css/bootstrap.css" %}">
+            <script type="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
+            <script>
+              fuction check(){
+              name=document.getElementByName("name").value
+              if name()
+              }
+            </script>
+        </head>
+        <body>
+
+          <div class="container">
+    
+            <header class="d-flex flex-wrap justify-content-center  py-2 ">
+                
+                    <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto mx-auto" href="/signup">
+                  <img src="{% static "logo.png" %}"  width="150" height="80" alt="logo">
+                </a>
+              </header>
+          
+          
+          {% comment %} hr nhi lagane margin se karna hai to be done {% endcomment %}
+            <section class="vh-100">
+              
+    <div class="container">
+      <div class="col-lg-6 m-auto  text-dark">
+                  <p class="text-center h3 alert alert-info fw-bold mb-2 mx-1 mx-md-4 mt-2">Edit Profile</p>
+  
+                  <form class="mx-1 mx-md-4" action="/updatetask" method="post">
+                      {% for i in list%}
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" name="ID" readonly value="{{i.id}}" class="form-control bg-light"  required />
+                        <label class="form-label fw-bold" for="form3Example1c">ID</label>
+                      </div>
+                    
+
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" name="name"  value="{{i.name|capfirst}}" class="form-control"  required />
+                        <label class="form-label fw-bold" for="form3Example1c">Your Name</label>
+                      </div>
+                    
+  
+                    
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" id="form3Example3c" name="email" value="{{i.email}}" class="form-control" required />
+                        <label class="form-label fw-bold" for="form3Example3c">Your Email</label>
+                      </div>
+                    
+                   
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="tel" id="form3Example3c" name="mobile" value="{{i.mobile}}" class="form-control" required />
+                          <label class="form-label fw-bold" for="form3Example3c">Your Mobile Number</label>
+                        </div>  
+                      
+
+                      
+                      
+                     
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="date" id="form3Example4c" value="{{i.dob}}" name="dob" class="form-control"  required/>
+                          <label class="form-label fw-bold" for="form3Example4c">Birthday!!</label>
+                        </div>
+                      
+  
+                 
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example4c" value="{{i.password}}" name="password" class="form-control"  required/>
+                        <label class="form-label fw-bold" for="form3Example4c">Password</label>
+                      </div>
+                    
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      
+                      <button type="submit"  class="btn btn-primary btn-lg">SUBMIT CHANGES</button>
+                    </div>
+                    {% endfor %}
+                  </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

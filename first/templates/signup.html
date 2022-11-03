@@ -1,0 +1,143 @@
+
+<html>
+    <head>
+        <title>
+            Signup Page</title>
+            {% load static %}
+            <link type="text/css" rel="stylesheet"  href="{% static "css/bootstrap.css" %}">
+            <script type="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
+            <script>
+              fuction check(){
+              name=document.getElementByName("name").value
+              if name()
+              }
+            </script>
+        </head>
+        <body>
+
+          <div class="container">
+    
+            <header class="d-flex flex-wrap justify-content-center  py-2 ">
+                
+                    <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto mx-auto" href="/signup">
+                  <img src="{% static "logo.png" %}"  width="150" height="80" alt="logo">
+                </a>
+              </header>
+          
+          
+          {% comment %} hr nhi lagane margin se karna hai to be done {% endcomment %}
+            <section class="vh-100">
+              
+    <div class="container ">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <h6 class="alert text-dark alert-danger fw-bold">Existing User!! <a href="/login" class="text-primary">CLICK HERE</a><h6>
+                  
+                 
+  
+                  <p class="text-center h3  fw-bold mb-2 mx-1 mx-md-4 mt-2">Sign up</p>
+  
+                  <form class="mx-1 mx-md-4" action="/signuptask" method="post">
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" name="name" class="form-control"  required />
+                        <label class="form-label fw-bold" for="form3Example1c">Your Name</label>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" id="form3Example3c" name="email" class="form-control" required />
+                        <label class="form-label fw-bold" for="form3Example3c">Your Email</label>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="tel" id="form3Example3c" name="mobile" class="form-control" required />
+                          <label class="form-label fw-bold" for="form3Example3c">Your Mobile Number</label>
+                        </div>  
+                      </div>
+
+                      
+                      <div class="form-check">
+                        
+                        <input class="form-check-input" type="radio"  name="gender" id="exampleRadios1" value="male" >Male
+                        <label class="form-check-label" for="exampleRadios1">
+                          
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio"  name="gender" id="exampleRadios2" value="female">Female
+                        <label class="form-check-label" for="exampleRadios2">
+                          
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="exampleRadios3" value="others" >Others
+                        <label class="form-check-label" for="exampleRadios3">
+                          
+                        </label>
+                        <h6 class="form-label fw-bold mt-2">Your Gender</h6>
+                        
+                      </div>
+                      <br>
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="date" id="form3Example4c" name="dob" class="form-control"  required/>
+                          <label class="form-label fw-bold" for="form3Example4c">Birthday!!</label>
+                        </div>
+                      </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="form3Example4c" name="password" class="form-control"  required/>
+                        <label class="form-label fw-bold" for="form3Example4c">Password</label>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="form3Example4cd" class="form-control" required />
+                        <label class="form-label fw-bold" for="form3Example4cd">Repeat your password</label>
+                      </div>
+                    </div>
+  
+                    
+                    
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      {% csrf_token %}
+                      <button type="submit" href="/dashboard" class="btn btn-primary btn-lg">Register</button>
+                    </div>
+                    
+  
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="{% static "signup.jpg" %}" class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+</body>
+</html>
